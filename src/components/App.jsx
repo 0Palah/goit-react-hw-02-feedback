@@ -11,13 +11,9 @@ export class App extends Component {
 
   handleCounter = event => {
     const targetEl = event.target.textContent.toLowerCase();
-    // console.log(this.state);
-    // console.log(Object.values(this.state));
-    // console.log(targetEl);
     this.setState(prevState => ({
       [targetEl]: (prevState[targetEl] += 1),
     }));
-    // console.dir(event.target.textContent);
   };
 
   countTotalFeedback = () => {

@@ -18,4 +18,8 @@ const FeedbackOptions = ({ handleCounter }) => (
   </div>
 );
 
+FeedbackOptions.propTypes = {
+  handleCounter: PropTypes.func,
+};
+
 export default FeedbackOptions;
