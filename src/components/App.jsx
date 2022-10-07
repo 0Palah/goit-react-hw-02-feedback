@@ -12,7 +12,7 @@ export class App extends Component {
   };
 
   handleCounter = event => {
-    const targetEl = event.target.textContent.toLowerCase();
+    const targetEl = event.target.textContent;
     this.setState(prevState => ({
       [targetEl]: (prevState[targetEl] += 1),
     }));
@@ -30,11 +30,6 @@ export class App extends Component {
     } else {
       return Math.round((this.state.good / this.countTotalFeedback()) * 100);
     }
-  };
-
-  getName = event => {
-    Object.keys(this.state);
-    console.log(Object.keys(this.state));
   };
 
   render() {
