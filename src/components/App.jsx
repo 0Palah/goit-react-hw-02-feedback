@@ -11,8 +11,8 @@ export class App extends Component {
 
   handleCounter = event => {
     const targetEl = event.target.textContent.toLowerCase();
-    console.log(this.state);
-    console.log(Object.values(this.state));
+    // console.log(this.state);
+    // console.log(Object.values(this.state));
     // console.log(targetEl);
     this.setState(prevState => ({
       [targetEl]: (prevState[targetEl] += 1),
@@ -27,7 +27,11 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    if (this.countTotalFeedback() === 0) {
+      return 0;
+    } else {
+      return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    }
   };
 
   getName = event => {
