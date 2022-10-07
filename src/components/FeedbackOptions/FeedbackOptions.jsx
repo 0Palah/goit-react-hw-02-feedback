@@ -1,22 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from '../FeedbackOptions/FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ handleCounter }) => (
+const FeedbackOptions = ({ options, handleCounter }) => (
   <div>
-    <button type="button" onClick={handleCounter}>
-      Good
-    </button>
-    <button type="button" onClick={handleCounter}>
-      Neutral
-    </button>
-    <button type="button" onClick={handleCounter}>
-      Bad
-    </button>
+    {options.map(el => (
+      <button type="button" onClick={handleCounter} className={css.button}>
+        {el}
+      </button>
+    ))}
   </div>
 );
 
 FeedbackOptions.propTypes = {
-  handleCounter: PropTypes.func,
+  handleCounter: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FeedbackOptions;
