@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
+import Section from './Section/Section';
 
 export class App extends Component {
   state = {
@@ -47,14 +48,18 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <FeedbackOptions handleCounter={this.handleCounter} />
-        <Statistics
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-        />
+        <Section>
+          <FeedbackOptions handleCounter={this.handleCounter} />
+        </Section>
+        <Section>
+          <Statistics
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+          />
+        </Section>
       </div>
     );
   }
