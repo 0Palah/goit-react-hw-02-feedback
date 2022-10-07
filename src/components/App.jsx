@@ -42,16 +42,17 @@ export class App extends Component {
         style={{
           height: '100vh',
           display: 'flex',
+          gap: 40,
           justifyContent: 'center',
           alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
-        <Section>
+        <Section title="Please leave feedback">
           <FeedbackOptions handleCounter={this.handleCounter} />
         </Section>
-        <Section>
+        <Section title="Statistics">
           <Statistics
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
