@@ -47,15 +47,15 @@ export class App extends Component {
       >
         <Section title="Please leave feedback">
           <FeedbackOptions
-            handleCounter={this.handleCounter}
+            onHandleCounter={this.handleCounter}
             options={Object.keys(this.state)}
           />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() !== 0 && (
             <Statistics
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
+              onTotalCount={this.countTotalFeedback()}
+              onPositivePercentage={this.countPositiveFeedbackPercentage()}
               good={this.state.good}
               neutral={this.state.neutral}
               bad={this.state.bad}

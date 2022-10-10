@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from '../FeedbackOptions/FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ options, handleCounter }) => (
+const FeedbackOptions = ({ options, onHandleCounter }) => (
   <div>
     {options.map(el => (
-      <button type="button" onClick={handleCounter} className={css.button}>
+      <button type="button" onClick={onHandleCounter} className={css.button}>
         {el}
       </button>
     ))}
@@ -13,7 +13,7 @@ const FeedbackOptions = ({ options, handleCounter }) => (
 );
 
 FeedbackOptions.propTypes = {
-  handleCounter: PropTypes.func.isRequired,
+  onHandleCounter: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
 };
 
