@@ -11,7 +11,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  addFeedback = event => {
+  leaveFeedback = event => {
     const targetEl = event.target.textContent;
     this.setState(prevState => ({
       [targetEl]: (prevState[targetEl] += 1),
@@ -47,7 +47,7 @@ export class App extends Component {
       >
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onAddFeedback={this.addFeedback}
+            onLeaveFeedback={this.leaveFeedback}
             options={Object.keys(this.state)}
           />
         </Section>
